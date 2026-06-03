@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Central do Afiliado — Confeitaria Lucrativa</title>
+<title>Materiais para Afiliados — Confeitaria Lucrativa</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(135deg, #1a0030 0%, #2d004d 50%, #1a0030 100%);
@@ -13,7 +14,9 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
-.container { max-width: 800px; margin: 0 auto; }
+
+.container { max-width: 900px; margin: 0 auto; }
+
 .header {
     text-align: center;
     padding: 40px 20px;
@@ -22,92 +25,113 @@ body {
     margin-bottom: 30px;
     border: 1px solid rgba(255,215,0,0.3);
 }
-.header h1 { font-size: 36px; color: #ffd700; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-.header h2 { font-size: 22px; color: #ffb300; margin-bottom: 15px; }
-.header p { font-size: 16px; color: #ddd; max-width: 500px; margin: 0 auto 20px; }
 
-.whatsapp-box {
+.header h1 {
+    font-size: 36px;
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+.header .whatsapp-box {
     display: inline-block;
-    background: rgba(0,150,0,0.2);
-    border: 3px solid #00c800;
+    background: rgba(0,200,0,0.15);
+    border: 3px solid #00e600;
     border-radius: 15px;
     padding: 20px 40px;
-    margin: 15px 0;
-    animation: pulse 2s infinite;
-}
-@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0,200,0,0.4); } 70% { box-shadow: 0 0 0 15px rgba(0,200,0,0); } 100% { box-shadow: 0 0 0 0 rgba(0,200,0,0); } }
-.whatsapp-box h3 { font-size: 28px; color: #00ff00; }
-.whatsapp-box p { font-size: 16px; color: #ccc; margin-top: 5px; }
-
-.instrucao {
-    background: rgba(255,215,0,0.1);
-    border: 1px solid #ffd700;
-    border-radius: 12px;
-    padding: 20px;
     margin: 20px 0;
-    text-align: center;
 }
-.instrucao p { font-size: 15px; color: #ffd700; }
 
-.section-title {
+.header .whatsapp-box .tel {
+    font-size: 32px;
+    color: #00ff00;
+    font-weight: bold;
+}
+
+.header .whatsapp-box .tel a {
+    color: #00ff00;
+    text-decoration: none;
+}
+
+.header .whatsapp-box p {
+    font-size: 16px;
+    color: #ccc;
+    margin-top: 8px;
+}
+
+.header .aviso {
+    font-size: 18px;
+    color: #ffb300;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.textos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.textos-header h2 {
     font-size: 24px;
     color: #ffd700;
-    margin: 30px 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(255,215,0,0.3);
 }
-.subtitle { color: #aaa; font-size: 14px; margin-bottom: 20px; }
 
-.search-box {
-    width: 100%;
-    padding: 12px 20px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.2);
+.textos-header select {
+    padding: 8px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,215,0,0.3);
     background: rgba(255,255,255,0.1);
     color: #fff;
-    font-size: 16px;
-    margin-bottom: 20px;
-    outline: none;
+    font-size: 14px;
+    cursor: pointer;
 }
-.search-box::placeholder { color: rgba(255,255,255,0.4); }
-.search-box:focus { border-color: #ffd700; background: rgba(255,255,255,0.15); }
 
-.textos-grid { display: flex; flex-direction: column; gap: 12px; }
+.textos-header select option { background: #2d004d; color: #fff; }
+
+.textos-grid {
+    display: grid;
+    gap: 12px;
+    margin: 20px 0;
+}
+
 .texto-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 15px 20px;
+    border-radius: 10px;
+    padding: 15px;
     position: relative;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background 0.3s;
 }
-.texto-card:hover { border-color: #ffd700; background: rgba(255,255,255,0.08); }
-.texto-card .copy-btn {
+
+.texto-card:hover { background: rgba(255,255,255,0.08); }
+
+.texto-card .numero {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(255,215,0,0.2);
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    font-weight: bold;
+}
+
+.texto-card p { font-size: 14px; color: #ddd; line-height: 1.7; }
+
+.texto-card .copy-btn {
+    margin-top: 8px;
+    background: rgba(255,215,0,0.15);
     color: #ffd700;
-    border: 1px solid #ffd700;
-    padding: 5px 12px;
-    border-radius: 6px;
+    border: 1px solid rgba(255,215,0,0.3);
+    padding: 4px 14px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
-    transition: all 0.3s;
 }
-.texto-card .copy-btn:hover { background: rgba(255,215,0,0.4); }
-.texto-card .tag {
-    display: inline-block;
-    background: rgba(139,0,0,0.6);
-    color: #ff9999;
-    padding: 2px 10px;
-    border-radius: 10px;
-    font-size: 11px;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-.texto-card p { font-size: 14px; color: #ddd; line-height: 1.6; }
+
+.texto-card .copy-btn:hover { background: rgba(255,215,0,0.25); }
 
 .footer {
     text-align: center;
@@ -115,6 +139,7 @@ body {
     color: rgba(255,255,255,0.4);
     font-size: 14px;
 }
+
 .toast {
     position: fixed;
     bottom: 30px;
@@ -128,187 +153,204 @@ body {
     font-weight: bold;
     display: none;
     z-index: 999;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
-.count { color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 10px; }
 
 @media (max-width: 600px) {
     .header h1 { font-size: 24px; }
-    .header h2 { font-size: 18px; }
-    .whatsapp-box { padding: 15px 20px; }
-    .whatsapp-box h3 { font-size: 22px; }
+    .header .whatsapp-box .tel { font-size: 24px; }
+    .header .whatsapp-box { padding: 15px 20px; }
 }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.pagination button {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,215,0,0.3);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.pagination button:hover { background: rgba(255,255,255,0.15); }
+.pagination button.active { background: #ffd700; color: #1a0030; font-weight: bold; }
 </style>
 </head>
 <body>
+
 <div class="container">
 
-<div class="header">
-    <h1>🍰 CONFEITARIA LUCRATIVA</h1>
-    <h2>Central do Afiliado — Hortmart 🛒</h2>
-    <p>Aqui você encontra textos prontos para divulgar e vender o curso de confeitaria!</p>
-    
-    <div class="whatsapp-box">
-        <h3>📲 Chame a Carol no WhatsApp</h3>
-        <p>(11) 91400-2547</p>
-        <p style="font-size:13px; color:#aaa;">Ela vai te enviar as artes prontas para divulgar!</p>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🍰 MATERIAIS PARA AFILIADOS</h1>
+        <h2 style="color:#ffb300;font-size:20px;margin-top:5px;">Confeitaria Lucrativa</h2>
+
+        <div class="whatsapp-box">
+            <p style="font-size:14px;color:#aaa;margin-bottom:5px;">📲 Chame a Carol no WhatsApp</p>
+            <div class="tel"><a href="https://wa.me/5511914002547">(11) 91400-2547</a></div>
+            <p style="font-size:15px;color:#ddd;margin-top:8px;">Me chama que eu te envio as artes prontas!</p>
+        </div>
+
+        <div class="aviso">
+            ⚡ Me chamando no WhatsApp, eu te envio as artes de divulgação em PNG e PDF!
+        </div>
     </div>
-    
-    <div class="instrucao">
-        <p>👆 Me chame no WhatsApp que eu te envio as artes e tiro suas dúvidas!</p>
+
+    <!-- TEXTOS HEADER -->
+    <div class="textos-header">
+        <h2>📝 Textos Prontos (100)</h2>
+        <select id="filtroCategoria" onchange="filtrarTextos()">
+            <option value="todos">Todos os textos</option>
+            <option value="grupo">Para grupos de WhatsApp</option>
+            <option value="instagram">Para Instagram</option>
+            <option value="facebook">Para Facebook</option>
+            <option value="stories">Para Stories</option>
+            <option value="depoimento">Depoimentos</option>
+            <option value="curto">Textos Curtos</option>
+            <option value="profissional">Abordagem Profissional</option>
+        </select>
     </div>
-</div>
 
-<h2 class="section-title">📝 Textos Prontos</h2>
-<p class="subtitle">Clique em qualquer texto para copiar. Cole nos grupos, stories e mensagens.</p>
-<p class="count" id="textCount">Carregando...</p>
-<input type="text" class="search-box" id="searchBox" placeholder="🔍 Buscar texto... (ex: WhatsApp, Instagram, 50 receitas...)">
+    <div id="paginationTop" class="pagination"></div>
+    <div id="textosContainer" class="textos-grid"></div>
+    <div id="paginationBottom" class="pagination"></div>
 
-<div class="textos-grid" id="textosGrid"></div>
-
-<div class="footer">
-    <p>© 2025 Carol Ribeiro — Delícias na Hora</p>
-    <p style="margin-top:5px;">Em parceria com Hortmart 🛒</p>
-</div>
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2025 Carol Ribeiro — Delícias na Hora</p>
+        <p style="margin-top:5px;">📱 (11) 91400-2547</p>
+    </div>
 </div>
 
 <div class="toast" id="toast">✅ Texto copiado!</div>
 
 <script>
 const textos = [
-    // ===== GRUPOS DE WHATSAPP =====
-    {tag: "WhatsApp", text: "🍰 QUER APRENDER CONFEITARIA E LUCRAR?\\n\\nO curso CONFEITARIA LUCRATIVA tem:\\n✅ +50 receitas exclusivas\\n✅ 30 recheios de bônus\\n✅ Certificado incluso\\n✅ Suporte direto com a Carol\\n\\n💰 A partir de R$ 10\\n📲 Chama no WhatsApp e garanta sua vaga!"},
-    {tag: "WhatsApp", text: "🔥 CURSO DE CONFEITARIA MAIS COMPLETO DA INTERNET!\\n\\n+50 receitas que vendem\\n30 recheios de bônus\\nCertificado de conclusão\\nSuporte direto com a Carol\\n\\n💵 Só R$ 10 pra começar\\n👩‍🍳 Aprenda em casa, lucre todo dia\\n\\nChama no WhatsApp!"},
-    {tag: "WhatsApp", text: "🍪 VOCÊ AMA FAZER DOCES? Transforme isso em dinheiro!\\n\\nO curso Confeitaria Lucrativa te ensina:\\n✔️ Bolos, doces e salgados que vendem\\n✔️ Precificação certa pra lucrar\\n✔️ Dicas de vendas e marketing\\n✔️ +50 receitas + 30 recheios de bônus\\n\\n📲 Chame agora no WhatsApp!"},
-    {tag: "WhatsApp", text: "🚨 VAGAS ABERTAS! Curso de Confeitaria Lucrativa\\n\\nDo zero ao lucro!\\n\\n📚 O que você vai aprender:\\n✨ Receitas testadas e aprovadas\\n✨ Segredos da confeitaria profissional\\n✨ Como vender e ganhar dinheiro\\n✨ Precificar sem erro\\n\\n🎁 Bônus: 30 recheios exclusivos\\n📜 Certificado incluso\\n\\n💵 Só R$ 10 pra começar\\n👉 Chama no WhatsApp!"},
-    {tag: "WhatsApp", text: "🍰 VEM SER CONFEITEIRA DE SUCESSO!\\n\\nCurso completo com +50 receitas que vendem de verdade.\\n\\n✅ Bolo de chocolate\\n✅ Doces finos\\n✅ Salgados para festa\\n✅ Sobremesas deliciosas\\n✅ 30 recheios de bônus\\n\\n💰 Invista R$ 10 e comece hoje!\\n📲 Chame no WhatsApp e garanta sua vaga!"},
-    {tag: "WhatsApp", text: "👩‍🍳 CURSO DE CONFEITARIA ONLINE\\n\\nAprenda no seu ritmo, sem sair de casa!\\n\\n📚 +50 receitas exclusivas\\n🎁 30 recheios de bônus\\n📜 Certificado incluso\\n💬 Suporte direto com a Carol\\n\\n💰 A partir de R$ 10\\n\\n📲 Me chama no WhatsApp que te explico tudo!"},
-    {tag: "WhatsApp", text: "🤑 GANHE DINHEIRO FAZENDO O QUE AMA!\\n\\nCurso de Confeitaria Lucrativa\\n\\n🧁 Bolos, doces, salgados e muito mais\\n📚 +50 receitas passo a passo\\n🎁 30 recheios exclusivos de bônus\\n💵 Lucro garantido\\n\\n🔥 Só R$ 10 pra começar\\n📲 Chama no WhatsApp!"},
-    {tag: "WhatsApp", text: "🍩 QUER MONTAR SEU PRÓPRIO NEGÓCIO?\\n\\nCurso Confeitaria Lucrativa\\n\\nAprenda do zero a fazer:\\n✅ Bolos caseiros que vendem\\n✅ Doces para festas\\n✅ Salgados deliciosos\\n✅ Sobremesas profissionais\\n\\n🎁 +30 recheios de bônus\\n📜 Certificado incluso\\n🆘 Suporte direto\\n\\n💰 R$ 10 e você começa\\n📲 Chama no WhatsApp!"},
-    {tag: "WhatsApp", text: "🍰 CONFEITARIA DO ZERO AO LUCRO!\\n\\nVocê vai aprender:\\n✔️ Receitas que realmente vendem\\n✔️ Como precificar seus produtos\\n✔️ Dicas de embalagens e apresentação\\n✔️ Marketing digital pra vender mais\\n\\n📚 +50 receitas\\n🎁 30 recheios de bônus\\n📜 Certificado\\n\\n💵 Invista R$ 10 e comece hoje!\\n📲 Chame no WhatsApp!"},
-    {tag: "WhatsApp", text: "🔥 OPORTUNIDADE ÚNICA!\\n\\nCurso de Confeitaria Lucrativa\\n\\nO curso mais completo pra quem quer:\\n✓ Aprender do zero\\n✓ Montar um negócio em casa\\n✓ Vender e lucrar todos os dias\\n\\n📚 +50 receitas\\n🎁 30 recheios bônus\\n📜 Certificado incluso\\n\\n💰 Apenas R$ 10\\n📲 Chame no WhatsApp!"},
-    {tag: "WhatsApp", text: "🧁 QUER FAZER BOLOS QUE VENDEM?\\n\\nCurso Confeitaria Lucrativa\\n\\nAprenda receitas profissionais e venda na sua cidade!\\n\\n📚 +50 receitas exclusivas\\n🎁 30 recheios de bônus\\n📜 Certificado de conclusão\\n💬 Suporte direto com a Carol\\n\\n💰 A partir de R$ 10\\n📲 Chame no WhatsApp!"},
-    {tag: "WhatsApp", text: "🍪 OLHA ESSA OPORTUNIDADE!\\n\\nCurso de Confeitaria Lucrativa\\n\\nPra quem quer aprender e ganhar dinheiro!\\n\\n✅ +50 receitas\\n✅ 30 recheios de bônus\\n✅ Certificado\\n✅ Suporte direto\\n\\n🔥 Tudo por apenas R$ 10\\n📲 Chama no WhatsApp e garanta sua vaga!"},
-    {tag: "WhatsApp", text: "🚀 VEM CRESCER COM A GENTE!\\n\\nCurso Confeitaria Lucrativa\\n\\nO guia completo pra você se tornar uma confeiteira de sucesso!\\n\\n📚 +50 receitas testadas\\n🎁 30 recheios de bônus\\n📜 Certificado incluso\\n💬 Suporte direto\\n\\n💰 R$ 10 pra começar\\n📲 Chama no WhatsApp!"},
-    {tag: "WhatsApp", text: "🍰 NÃO PERCA TEMPO!\\n\\nCurso Confeitaria Lucrativa\\n\\nAprenda confeitaria do zero e comece a lucrar!\\n\\n📚 Mais de 50 receitas\\n🎁 30 recheios de bônus\\n📜 Certificado\\n💬 Suporte com a Carol\\n\\n💵 Invista R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "WhatsApp", text: "👩‍🍳 SEJA UMA CONFEITEIRA DE SUCESSO!\\n\\nCurso completo com tudo que você precisa:\\n\\n✔️ +50 receitas exclusivas\\n✔️ 30 recheios de bônus\\n✔️ Certificado incluso\\n✔️ Suporte direto\\n\\n💰 Comece com R$ 10\\n📲 Chame no WhatsApp e faça parte!"},
-    {tag: "WhatsApp", text: "🎂 CONFEITARIA LUCRATIVA\\n\\nTransforme sua cozinha em uma máquina de dinheiro!\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💬 Suporte\\n💵 Lucro garantido\\n\\n🔥 Tudo por R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "WhatsApp", text: "💎 DESCOBERTA INCRÍVEL!\\n\\nCurso de Confeitaria Lucrativa\\n\\nVocê sabia que dá pra ganhar dinheiro fazendo bolos em casa?\\n\\nCom o curso certo, qualquer pessoa consegue!\\n\\n📚 +50 receitas que vendem\\n🎁 30 recheios bônus\\n📜 Certificado\\n\\n💰 Só R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "WhatsApp", text: "🔥 PROMOÇÃO ESPECIAL!\\n\\nCurso Confeitaria Lucrativa\\n\\nO melhor curso de confeitaria por apenas R$ 10!\\n\\n✅ +50 receitas\\n✅ 30 recheios de bônus\\n✅ Certificado incluso\\n✅ Suporte direto\\n\\n📲 Chame no WhatsApp e garanta o seu!"},
-    {tag: "WhatsApp", text: "🧁 PRA QUEM AMA CONFEITARIA!\\n\\nCurso completo do zero ao avançado!\\n\\n📚 +50 receitas exclusivas\\n🎁 30 recheios de bônus\\n📜 Certificado de conclusão\\n💬 Suporte direto\\n\\n💰 Aproveite: R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "WhatsApp", text: "🍩 NÃO DEIXE PRA DEPOIS!\\n\\nCurso Confeitaria Lucrativa\\n\\nA chance de aprender confeitaria e ainda lucrar!\\n\\n✅ +50 receitas\\n✅ 30 recheios bônus\\n✅ Certificado\\n✅ Suporte\\n\\n💰 Só R$ 10\\n📲 Chama no WhatsApp!"},
+    // ===== GRUPOS DE WHATSAPP (1-25) =====
+    {cat:"grupo", txt:"🍰 CONFEITARIA LUCRATIVA — Do zero ao lucro! Aprenda receitas que vendem de verdade, com +50 receitas, 30 recheios de bônus e certificado. Investimento a partir de R$ 10. Chama no privado!"},
+    {cat:"grupo", txt:"🥮 Quer fazer bolos, doces e salgados que TODO MUNDO quer comprar? O curso Confeitaria Lucrativa te ensina o passo a passo. +50 receitas + 30 recheios de bônus. A partir de R$ 10! Me chama!"},
+    {cat:"grupo", txt:"👩‍🍳 Vire uma confeiteira de sucesso! Curso completo com +50 receitas, certificado e 30 recheios exclusivos de bônus. Ideal para quem quer começar do zero. Invista a partir de R$ 10. Fala comigo!"},
+    {cat:"grupo", txt:"💰 Renda extra fazendo bolos em casa? O curso Confeitaria Lucrativa tem +50 receitas testadas, 30 recheios de bônus e certificado. A partir de R$ 10 você começa! Chama no privado!"},
+    {cat:"grupo", txt:"🍪 Quer aprender a fazer aqueles bolos lindos que vendem super bem? O curso tem +50 receitas, 30 recheios e certificado. Tudo passo a passo. A partir de R$ 10. Me chama!"},
+    {cat:"grupo", txt:"🎂 Empreenda na confeitaria! Curso completo com +50 receitas que vendem, 30 recheios exclusivos, certificado e suporte. Invista a partir de R$ 10. Chama no privado que te explico!"},
+    {cat:"grupo", txt:"🥐 Aprenda confeitaria do zero e ganhe dinheiro! Curso com +50 receitas, 30 recheios de bônus e certificado. Do básico ao avançado. A partir de R$ 10! Fala comigo!"},
+    {cat:"grupo", txt:"🤑 Quer uma renda extra fazendo o que ama? Confeitaria Lucrativa te ensina receitas que vendem! +50 receitas, bônus de 30 recheios e certificado. A partir de R$ 10. Chama!"},
+    {cat:"grupo", txt:"👩‍🍳 Curso de Confeitaria para iniciantes e avançados! +50 receitas exclusivas, 30 recheios de bônus, certificado incluso. Aprenda e lucre! A partir de R$ 10. Me chama!"},
+    {cat:"grupo", txt:"🍰 Tem vontade de fazer bolos profissionais? O curso Confeitaria Lucrativa te ensina tudo! +50 receitas, 30 recheios, certificado. A partir de R$ 10. Chama no privado!"},
+    {cat:"grupo", txt:"🥮 Transforme sua paixão por confeitaria em dinheiro! Curso completo com +50 receitas que vendem, 30 recheios de bônus e certificado. Invista a partir de R$ 10. Fala comigo!"},
+    {cat:"grupo", txt:"🎂 Para quem quer aprender confeitaria e lucrar! +50 receitas, 30 recheios de bônus, certificado incluso e suporte direto. A partir de R$ 10. Chama no privado!"},
+    {cat:"grupo", txt:"🍪 Aprenda receitas de bolos, doces e salgados que vendem muito! Curso Confeitaria Lucrativa com +50 receitas e 30 recheios de bônus. A partir de R$ 10. Me chama!"},
+    {cat:"grupo", txt:"👩‍🍳 Seu negócio de confeitaria começa aqui! Curso completo com +50 receitas, 30 recheios de bônus, certificado e suporte. A partir de R$ 10. Chama no privado!"},
+    {cat:"grupo", txt:"💰 Lucro garantido na confeitaria! Curso com +50 receitas exclusivas, 30 recheios de bônus e certificado. Receitas que vendem de verdade. A partir de R$ 10. Fala comigo!"},
+    {cat:"grupo", txt:"🥐 Quer fazer dinheiro com confeitaria mas não sabe por onde começar? O curso tem +50 receitas, 30 recheios de bônus e certificado. Passo a passo completo! A partir de R$ 10. Chama!"},
+    {cat:"grupo", txt:"🎂 Confeitaria Lucrativa: o curso que transforma iniciantes em confeiteiras de sucesso! +50 receitas, 30 recheios de bônus e certificado. A partir de R$ 10. Me chama!"},
+    {cat:"grupo", txt:"🍰 Renda extra fazendo bolos e doces em casa? Curso completo com +50 receitas, 30 recheios de bônus e certificado. Tudo explicado passo a passo. A partir de R$ 10. Chama!"},
+    {cat:"grupo", txt:"👩‍🍳 Curso Confeitaria Lucrativa: aprenda, lucre e transforme sua vida! +50 receitas exclusivas, 30 recheios de bônus, certificado incluso. A partir de R$ 10. Fala comigo!"},
+    {cat:"grupo", txt:"🥮 Faça bolos e doces que vendem como água! Curso com +50 receitas, 30 recheios de bônus e certificado. A partir de R$ 10 você começa hoje! Chama no privado!"},
+    {cat:"grupo", txt:"🎂 Quer sair do zero na confeitaria? O curso Confeitaria Lucrativa é pra você! +50 receitas, 30 recheios, certificado, suporte. A partir de R$ 10. Me chama!"},
+    {cat:"grupo", txt:"🍪 Para quem quer aprender a fazer aqueles bolos de dar água na boca e ainda lucrar! Curso com +50 receitas, 30 recheios de bônus. A partir de R$ 10. Chama!"},
+    {cat:"grupo", txt:"💰 Aprenda confeitaria e lucre todos os dias! Curso completo com +50 receitas, 30 recheios de bônus, certificado incluso. A partir de R$ 10. Fala comigo!"},
+    {cat:"grupo", txt:"🥐 Confeitaria Lucrativa: o curso que te ensina a fazer receitas que vendem! +50 receitas, 30 recheios de bônus, certificado. A partir de R$ 10. Chama no privado!"},
+    {cat:"grupo", txt:"🎂 Invista em você! Curso de confeitaria completo com +50 receitas, 30 recheios de bônus e certificado. Comece hoje a lucrar com bolos e doces. A partir de R$ 10. Me chama!"},
 
-    // ===== INSTAGRAM LEGENDAS =====
-    {tag: "Instagram", text: "🍰 QUER APRENDER CONFEITARIA DO ZERO?\\n\\nO curso CONFEITARIA LUCRATIVA chegou pra transformar sua cozinha em lucro!\\n\\n📚 +50 receitas exclusivas\\n🎁 30 recheios de bônus\\n📜 Certificado incluso\\n\\n💰 A partir de R$ 10\\n\\n👩‍🍳 Aprenda em casa, no seu ritmo\\n🔥 Vagas limitadas!\\n\\n👉 Link na bio / Chama no direct"},
-    {tag: "Instagram", text: "🍪 VOCÊ NASCEU PRA CONFEITARIA!\\n\\nTem paixão por fazer doces? Então esse curso é pra você!\\n\\nCONFEITARIA LUCRATIVA\\n\\n✨ +50 receitas que vendem\\n✨ 30 recheios de bônus\\n✨ Certificado incluso\\n✨ Suporte direto\\n\\n💵 A partir de R$ 10\\n\\n📲 Me chama no direct!"},
-    {tag: "Instagram", text: "🚀 DOE SABOR E LUCRATIVIDADE!\\n\\nAprenda confeitaria profissional e monte seu negócio!\\n\\n📚 Curso completo com +50 receitas\\n🎁 30 recheios exclusivos\\n📜 Certificado de conclusão\\n\\n💵 Invista R$ 10 e comece hoje\\n\\n👩‍🍳 Chama no direct!"},
-    {tag: "Instagram", text: "🧁 DE COZINHA CASEIRA A NEGÓCIO LUCRATIVO!\\n\\nO curso Confeitaria Lucrativa te mostra o caminho!\\n\\n📚 +50 receitas testadas\\n🎁 30 recheios de bônus\\n📜 Certificado incluso\\n💬 Suporte direto com a Carol\\n\\n💰 Apenas R$ 10\\n\\n👉 Chama no direct!"},
-    {tag: "Instagram", text: "🍰 REALIZE SEU SONHO!\\n\\nSempre quis trabalhar com confeitaria?\\n\\nO CONFEITARIA LUCRATIVA te ensina tudo do zero!\\n\\n✔️ +50 receitas\\n✔️ 30 recheios bônus\\n✔️ Certificado\\n✔️ Suporte\\n\\n💵 Comece com R$ 10\\n\\n📲 Chama no direct!"},
-    {tag: "Instagram", text: "👩‍🍳 EM BUSCA DE UMA RENDA EXTRA?\\n\\nConfeitaria Lucrativa é a solução!\\n\\nAprenda a fazer bolos, doces e salgados que vendem!\\n\\n📚 +50 receitas\\n🎁 30 recheios de bônus\\n📜 Certificado incluso\\n\\n💰 R$ 10 pra começar\\n\\n👉 Me chama no direct!"},
-    {tag: "Instagram", text: "🔥 A OPORTUNIDADE QUE VOCÊ ESPERAVA!\\n\\nCurso Confeitaria Lucrativa\\n\\nAprenda do zero, venda todos os dias, lucre de verdade!\\n\\n📚 +50 receitas exclusivas\\n🎁 30 recheios bônus\\n📜 Certificado\\n\\n💵 Só R$ 10\\n\\n📲 Chama no direct!"},
-    {tag: "Instagram", text: "🍩 VOCÊ MERECE ESSA OPORTUNIDADE!\\n\\nCurso de Confeitaria Lucrativa\\n\\nTransforme sua paixão em lucro!\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💬 Suporte\\n\\n💰 A partir de R$ 10\\n\\n👉 Chama no direct!"},
-    {tag: "Instagram", text: "🎂 JÁ PENSOU EM VIVER DE CONFEITARIA?\\n\\nCom o curso certo, você consegue!\\n\\nCONFEITARIA LUCRATIVA\\n\\n✨ +50 receitas que vendem\\n✨ 30 recheios de bônus\\n✨ Certificado incluso\\n✨ Suporte direto\\n\\n💵 Invista R$ 10\\n\\n📲 Me chama no direct!"},
-    {tag: "Instagram", text: "🧁 DE OLHO NESSA OPORTUNIDADE!\\n\\nCurso Confeitaria Lucrativa\\n\\nO curso mais completo pra quem quer:\\n✔️ Aprender confeitaria\\n✔️ Montar negócio próprio\\n✔️ Lucrar todos os dias\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n\\n💰 Só R$ 10\\n\\n📲 Chama no direct!"},
+    // ===== INSTAGRAM (26-45) =====
+    {cat:"instagram", txt:"🍰 Quer aprender a fazer bolos que vendem? O curso Confeitaria Lucrativa tem +50 receitas e 30 recheios de bônus! 👇 Link na bio / Chama no direct"},
+    {cat:"instagram", txt:"🥮 Transforme sua cozinha em uma máquina de dinheiro! Curso completo de confeitaria com +50 receitas e certificado. A partir de R$ 10. Chama no direct!"},
+    {cat:"instagram", txt:"👩‍🍳 Do zero ao lucro na confeitaria! +50 receitas exclusivas + 30 recheios de bônus + certificado. Tudo que você precisa pra começar. Chama no direct!"},
+    {cat:"instagram", txt:"💰 Renda extra fazendo doces? O curso Confeitaria Lucrativa te ensina receitas que vendem de verdade! +50 receitas, certificado incluso. A partir de R$ 10. Direct!"},
+    {cat:"instagram", txt:"🎂 Aprenda confeitaria do zero com +50 receitas testadas e aprovadas! Bônus de 30 recheios exclusivos e certificado. Chama no direct!"},
+    {cat:"instagram", txt:"🍪 Quer fazer bolos e doces profissionais? Curso Confeitaria Lucrativa: +50 receitas, 30 recheios de bônus, certificado. A partir de R$ 10. Me chama!"},
+    {cat:"instagram", txt:"🥐 Empreenda na confeitaria! Curso completo com passo a passo, +50 receitas, 30 recheios de bônus e certificado. A partir de R$ 10. Chama no direct!"},
+    {cat:"instagram", txt:"👩‍🍳 A receita do sucesso: curso Confeitaria Lucrativa! +50 receitas exclusivas, 30 recheios de bônus, certificado incluso. Invista a partir de R$ 10. Direct!"},
+    {cat:"instagram", txt:"🍰 Quer ganhar dinheiro com bolos e doces? O curso tem +50 receitas que vendem, 30 recheios de bônus e certificado. A partir de R$ 10. Chama!"},
+    {cat:"instagram", txt:"🥮 Aprenda, pratique e lucre! Curso Confeitaria Lucrativa com +50 receitas, 30 recheios de bônus e certificado de conclusão. A partir de R$ 10. Direct!"},
+    {cat:"instagram", txt:"🎂 De iniciante a confeiteira de sucesso! Curso completo com +50 receitas, 30 recheios de bônus e certificado. Tudo passo a passo. Chama no direct!"},
+    {cat:"instagram", txt:"💰 Transforme sua paixão por confeitaria em lucro! +50 receitas, 30 recheios de bônus, certificado. A partir de R$ 10. Direct!"},
+    {cat:"instagram", txt:"🍪 Aprenda receitas que vendem! Curso Confeitaria Lucrativa com +50 receitas, 30 recheios de bônus e certificado. Chama no direct!"},
+    {cat:"instagram", txt:"🥐 Quer fazer bolos lindos e lucrar com isso? O curso tem +50 receitas, 30 recheios de bônus e certificado. A partir de R$ 10. Me chama!"},
+    {cat:"instagram", txt:"👩‍🍳 Curso Confeitaria Lucrativa: do zero ao lucro! +50 receitas exclusivas, 30 recheios de bônus, certificado incluso. Direct!"},
+    {cat:"instagram", txt:"🎂 A melhor escolha para quem quer aprender confeitaria e ganhar dinheiro! +50 receitas, 30 recheios, certificado. A partir de R$ 10. Chama!"},
+    {cat:"instagram", txt:"🍰 Quer uma renda extra fazendo doces? Curso completo com +50 receitas, 30 recheios de bônus e certificado. A partir de R$ 10. Direct!"},
+    {cat:"instagram", txt:"🥮 Seu negócio de confeitaria começa aqui! +50 receitas, 30 recheios de bônus, certificado. A partir de R$ 10. Chama no direct!"},
+    {cat:"instagram", txt:"👩‍🍳 Para quem quer aprender confeitaria de verdade! Curso com +50 receitas, 30 recheios de bônus e certificado. Chama no direct!"},
+    {cat:"instagram", txt:"💰 Faça bolos e doces que vendem muito! Curso com +50 receitas, 30 recheios de bônus, certificado. A partir de R$ 10. Direct!"},
 
-    // ===== FOCADO EM CADA BENEFÍCIO =====
-    {tag: "50 Receitas", text: "📚 +50 RECEITAS DE CONFEITARIA\\n\\nBolos, tortas, doces finos, salgados, sobremesas...\\nTudo passo a passo!\\n\\nCurso Confeitaria Lucrativa\\n\\n✅ Receitas testadas e aprovadas\\n✅ Ingredientes acessíveis\\n✅ Modo de preparo detalhado\\n✅ Dicas de apresentação\\n\\n💰 R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "30 Recheios", text: "🎁 30 RECHEIOS EXCLUSIVOS DE BÔNUS!\\n\\nSó no Confeitaria Lucrativa você ganha:\\n\\n🍫 Brigadeiro gourmet\\n🍓 Ninho com morango\\n🍪 Prestígio\\n🥜 Paçoca\\n🍋 Limão siciliano\\nE mais 25 recheios!\\n\\n💰 Curso completo por R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Certificado", text: "📜 CERTIFICADO DE CONCLUSÃO INCLUSO!\\n\\nAo finalizar o curso Confeitaria Lucrativa, você recebe seu certificado!\\n\\n✔️ Válido em todo Brasil\\n✔️ Perfeito pra comprovar conhecimento\\n✔️ Diferencial no currículo\\n\\n💰 Curso completo: R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Do Zero", text: "👩‍🍳 NUNCA FEZ UM BOLO NA VIDA?\\n\\nSem problema! O Confeitaria Lucrativa é do ZERO!\\n\\nVocê vai aprender:\\n✔️ Equipamentos básicos\\n✔️ Ingredientes certos\\n✔️ Técnicas profissionais\\n✔️ Receitas que vendem\\n✔️ Como lucrar\\n\\n📚 +50 receitas\\n🎁 30 recheios bônus\\n📜 Certificado\\n\\n💰 R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Lucro", text: "💵 QUER GANHAR DINHEIRO COM CONFEITARIA?\\n\\nO curso Confeitaria Lucrativa te ensina:\\n\\n✅ Precificar seus produtos\\n✅ Calcular lucro real\\n✅ Vender no iFood e WhatsApp\\n✅ Fidelizar clientes\\n✅ Aumentar seus ganhos\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n\\n💰 Invista R$ 10 e lucre muito mais!\\n📲 Chama no WhatsApp!"},
-    {tag: "Suporte", text: "💬 SUPORTE DIRETO COM A CAROL!\\n\\nNo Confeitaria Lucrativa você não fica sozinha!\\n\\n✅ Tire dúvidas pelo WhatsApp\\n✅ Receba dicas exclusivas\\n✅ Acompanhamento personalizado\\n✅ Grupo de alunas\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n\\n💰 Apenas R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Online", text: "📱 CURSO 100% ONLINE\\n\\nAprenda confeitaria sem sair de casa!\\n\\n✅ Acesso pelo celular\\n✅ Estude no seu ritmo\\n✅ Veja quantas vezes quiser\\n✅ Suporte direto\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n\\n💰 Só R$ 10\\n📲 Chama no WhatsApp!"},
+    // ===== FACEBOOK (46-60) =====
+    {cat:"facebook", txt:"🍰 VOCÊ AMA CONFEITARIA? Transforme sua paixão em dinheiro! Curso Confeitaria Lucrativa: +50 receitas, 30 recheios de bônus e certificado. A partir de R$ 10. Chama no WhatsApp!"},
+    {cat:"facebook", txt:"🥮 QUER GANHAR DINHEIRO FAZENDO BOLOS? Curso completo de confeitaria com +50 receitas que vendem, 30 recheios de bônus e certificado. Invista a partir de R$ 10. Me chama!"},
+    {cat:"facebook", txt:"👩‍🍳 RENDA EXTRA NA CONFEITARIA! Aprenda do zero com +50 receitas exclusivas, 30 recheios de bônus e certificado. Tudo passo a passo. A partir de R$ 10. Chama no privado!"},
+    {cat:"facebook", txt:"💰 APRENDA E LUCRE! Curso Confeitaria Lucrativa: +50 receitas testadas, 30 recheios de bônus e certificado. Ideal para quem quer começar o próprio negócio. A partir de R$ 10. Fala comigo!"},
+    {cat:"facebook", txt:"🎂 SEU NEGÓCIO DE CONFEITARIA COMEÇA AQUI! Curso completo com +50 receitas, 30 recheios de bônus e certificado. Investimento a partir de R$ 10. Chama no WhatsApp!"},
+    {cat:"facebook", txt:"🍪 QUER FAZER BOLOS PROFISSIONAIS? O curso Confeitaria Lucrativa te ensina tudo! +50 receitas, 30 recheios de bônus, certificado. A partir de R$ 10. Me chama!"},
+    {cat:"facebook", txt:"🥐 APRENDA CONFEITARIA DO ZERO! Curso completo com +50 receitas que vendem, 30 recheios de bônus e certificado. Não precisa experiência. A partir de R$ 10. Chama!"},
+    {cat:"facebook", txt:"👩‍🍳 VENDA BOLOS E DOCES COMO UMA PROFISSIONAL! Curso com +50 receitas exclusivas, 30 recheios de bônus e certificado. A partir de R$ 10. Fala comigo!"},
+    {cat:"facebook", txt:"💰 MUITO LUCRO NA CONFEITARIA! Aprenda receitas que vendem, precifique certo e lucre todos os dias. +50 receitas, 30 recheios, certificado. A partir de R$ 10. Chama!"},
+    {cat:"facebook", txt:"🎂 VOCÊ MERECE TER O PRÓPRIO NEGÓCIO! Curso Confeitaria Lucrativa: +50 receitas, 30 recheios de bônus, certificado. Tudo que você precisa pra começar. A partir de R$ 10. Me chama!"},
+    {cat:"facebook", txt:"🍰 QUER UMA RENDA EXTRA GOSTOSA? Faça bolos e doces que todo mundo quer comprar! Curso com +50 receitas, 30 recheios de bônus e certificado. A partir de R$ 10. Chama no privado!"},
+    {cat:"facebook", txt:"🥮 DO ZERO AO LUCRO NA CONFEITARIA! Curso completo com +50 receitas testadas, 30 recheios de bônus e certificado. A partir de R$ 10. Fala comigo!"},
+    {cat:"facebook", txt:"👩‍🍳 APRENDA CONFEITARIA E GANHE DINHEIRO! Curso com +50 receitas exclusivas, 30 recheios de bônus e certificado. Investimento a partir de R$ 10. Chama!"},
+    {cat:"facebook", txt:"💰 SEU SONHO DE TER UM NEGÓCIO NA CONFEITARIA PODE SE REALIZAR! Curso completo, passo a passo, +50 receitas, 30 recheios, certificado. A partir de R$ 10. Me chama!"},
+    {cat:"facebook", txt:"🎂 FAÇA BOLOS QUE ENCANTAM E VENDEM! Curso Confeitaria Lucrativa: +50 receitas, 30 recheios de bônus, certificado. A partir de R$ 10. Chama no WhatsApp!"},
 
-    // ===== SHORT / IMPACTO =====
-    {tag: "Curto", text: "🍰 +50 RECEITAS DE CONFEITARIA POR R$ 10!\\n\\nBolo, doces, salgados...\\n30 recheios de bônus!\\n📜 Certificado incluso\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🔥 CURSO CONFEITARIA LUCRATIVA\\n\\n+50 receitas\\n30 recheios bônus\\nCertificado\\nTudo por R$ 10!\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "💵 QUER LUCRAR COM CONFEITARIA?\\n\\n+50 receitas\\n30 recheios bônus\\nCertificado incluso\\nR$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🧁 CONFEITARIA DO ZERO AO LUCRO\\n\\nPor apenas R$ 10\\n+50 receitas\\n30 recheios\\nCertificado\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🍪 APRENDA CONFEITARIA HOJE!\\n\\n+50 receitas\\n30 recheios\\nCertificado\\nSuporte\\nSó R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🍰 CURSO COMPLETO POR R$ 10!\\n\\n+50 receitas\\n30 recheios\\nCertificado\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🔥 OPORTUNIDADE DE OURO!\\n\\nConfeitaria Lucrativa\\nR$ 10\\n+50 receitas\\n30 recheios\\nCertificado\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "💰 RENDA EXTRA FAZENDO DOCES!\\n\\nCurso completo R$ 10\\n+50 receitas\\n30 recheios\\nCertificado\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "👩‍🍳 SEJA CONFEITEIRA PROFISSIONAL\\n\\nAprenda em casa\\nR$ 10\\n+50 receitas\\n30 recheios\\nCertificado\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🎂 FAÇA BOLOS QUE VENDEM!\\n\\nCurso por R$ 10\\n+50 receitas\\n30 recheios\\nCertificado\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "📚 +50 RECEITAS POR R$ 10!\\n\\nBônus: 30 recheios\\nCertificado incluso\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🍩 NÃO PERCA ESSA CHANCE!\\n\\nConfeitaria Lucrativa\\nSó R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "💎 OPORTUNIDADE ÚNICA!\\n\\nCurso completo + bônus\\nApenas R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🧁 PRA QUEM AMA DOCES!\\n\\nAprenda e lucre\\nSó R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Curto", text: "🔥 VAGA LIMITADA!\\n\\nConfeitaria Lucrativa\\nAgora por R$ 10\\n📲 Chama no WhatsApp!"},
+    // ===== STORIES (61-70) =====
+    {cat:"stories", txt:"🍰 Quem ama um docinho? Curso Confeitaria Lucrativa tem +50 receitas! A partir de R$ 10. 👇"},
+    {cat:"stories", txt:"🥮 Quer aprender a fazer bolos que vendem? Curso completo com +50 receitas! A partir de R$ 10. Chama!"},
+    {cat:"stories", txt:"👩‍🍳 Renda extra fazendo doces? Curso com +50 receitas e certificado! A partir de R$ 10. Direct!"},
+    {cat:"stories", txt:"💰 Lucro na confeitaria! Curso +50 receitas + 30 recheios de bônus. A partir de R$ 10. Chama!"},
+    {cat:"stories", txt:"🎂 Do zero ao lucro na confeitaria! Curso completo. A partir de R$ 10. 👇"},
+    {cat:"stories", txt:"🍪 Quer fazer bolos lindos? Curso com +50 receitas! A partir de R$ 10. Chama no direct!"},
+    {cat:"stories", txt:"🥐 Empreenda na confeitaria! Curso +50 receitas + certificado. A partir de R$ 10. Fala comigo!"},
+    {cat:"stories", txt:"👩‍🍳 Aprenda confeitaria do zero! +50 receitas, certificado. A partir de R$ 10. Direct!"},
+    {cat:"stories", txt:"💰 Transforme sua cozinha em dinheiro! Curso Confeitaria Lucrativa. A partir de R$ 10. Chama!"},
+    {cat:"stories", txt:"🍰 Quer uma renda extra gostosa? Curso com +50 receitas! A partir de R$ 10. 👇 Link na bio"},
 
-    // ===== FACEBOOK =====
-    {tag: "Facebook", text: "🍰 VOCÊ AMA FAZER BOLOS E DOCES?\\n\\nTransforme sua paixão em dinheiro com o curso CONFEITARIA LUCRATIVA!\\n\\n📚 +50 receitas testadas e aprovadas\\n🎁 30 recheios de bônus\\n📜 Certificado de conclusão\\n💬 Suporte direto com a Carol\\n\\n💰 Investimento a partir de R$ 10\\n\\nIdeal para quem quer:\\n✔️ Aprender do zero\\n✔️ Montar um negócio em casa\\n✔️ Vender no iFood e WhatsApp\\n✔️ Lucrar todos os dias\\n\\n👉 Me chama no WhatsApp pra mais informações!"},
-    {tag: "Facebook", text: "🔥 CURSO DE CONFEITARIA MAIS COMPLETO!\\n\\nConfeitaria Lucrativa\\n\\nAprenda tudo do zero e comece a ganhar dinheiro ainda essa semana!\\n\\n📚 +50 receitas que vendem\\n🎁 30 recheios exclusivos\\n📜 Certificado incluso\\n💬 Suporte direto\\n\\n💵 Valor: R$ 10\\n\\n📲 Me chame no WhatsApp!"},
-    {tag: "Facebook", text: "👩‍🍳 QUER TRABALHAR COM CONFEITARIA?\\n\\nO curso Confeitaria Lucrativa é a porta de entrada pro seu sucesso!\\n\\nVocê vai aprender:\\n✔️ Receitas profissionais\\n✔️ Técnicas de vendas\\n✔️ Precificação correta\\n✔️ Marketing digital\\n\\n📚 +50 receitas\\n🎁 30 recheios bônus\\n📜 Certificado\\n\\n💰 Só R$ 10\\n\\n📲 Chame no WhatsApp!"},
-    {tag: "Facebook", text: "💵 RENDA EXTRA FAZENDO O QUE AMA!\\n\\nCurso Confeitaria Lucrativa\\n\\nAprenda confeitaria em casa e lucre vendendo bolos, doces e salgados!\\n\\n📚 +50 receitas exclusivas\\n🎁 30 recheios de bônus\\n📜 Certificado incluso\\n\\n💰 Investimento: R$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Facebook", text: "🍪 NÃO PERCA MAIS TEMPO!\\n\\nConfeitaria Lucrativa é o curso que vai mudar sua vida!\\n\\n✅ Do zero ao profissional\\n✅ +50 receitas\\n✅ 30 recheios bônus\\n✅ Certificado\\n✅ Suporte direto\\n\\n💵 Apenas R$ 10\\n\\n📲 Chama no WhatsApp!"},
+    // ===== DEPOIMENTOS (71-75) =====
+    {cat:"depoimento", txt:"🗣️ 'Fiz o curso e em uma semana já tinha vendido 15 bolos! Nunca imaginei que conseguiria aprender tão rápido. Super recomendo!' — Maria S."},
+    {cat:"depoimento", txt:"🗣️ 'Comprei o curso Confeitaria Lucrativa e já no primeiro mês lucrei R$ 800 fazendo bolos em casa. Mudou minha vida!' — Juliana M."},
+    {cat:"depoimento", txt:"🗣️ 'Não sabia fazer nem um bolo de caixinha. Depois do curso, viro até encomendas para festas! Valeu cada centavo.' — Ana P."},
+    {cat:"depoimento", txt:"🗣️ 'O curso é completo demais! As receitas são testadas e funcionam de verdade. Já recuperei o investimento em 3 dias de vendas!' — Carla R."},
+    {cat:"depoimento", txt:"🗣️ 'Confeitaria Lucrativa me deu a base que eu precisava pra começar meu negócio. Hoje vivo só disso. Gratidão!' — Patrícia L."},
 
-    // ===== PARA ENVIAR NO PRIVADO =====
-    {tag: "Privado", text: "Oie! Tudo bem? 😊\\n\\nVi que você tem interesse em confeitaria e vim te convidar pra conhecer o curso CONFEITARIA LUCRATIVA!\\n\\n📚 São +50 receitas exclusivas\\n🎁 30 recheios de bônus\\n📜 Certificado incluso\\n💬 Suporte direto com a Carol\\n\\nTudo isso por apenas R$ 10!\\n\\nQuer saber mais? Me chama aqui! 💕"},
-    {tag: "Privado", text: "Olá! Tudo bom?\\n\\nVim te falar sobre o curso Confeitaria Lucrativa!\\n\\nÉ um curso completo de confeitaria com +50 receitas, 30 recheios de bônus e certificado. Tudo por R$ 10!\\n\\nPerfeito pra quem quer aprender e lucrar vendendo doces!\\n\\nTem interesse? 😊"},
-    {tag: "Privado", text: "Oii! 🥰\\n\\nTô divulgando o curso CONFEITARIA LUCRATIVA e pensei em você!\\n\\n+50 receitas de bolos, doces e salgados\\n30 recheios exclusivos de bônus\\nCertificado de conclusão\\nSuporte direto\\n\\nTudo por R$ 10!\\n\\nQuer mais informações?"},
-    {tag: "Privado", text: "Ei, tudo bem?\\n\\nVocê gosta de confeitaria? Então vou te fazer um convite!\\n\\nO curso Confeitaria Lucrativa tá com vagas abertas!\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💬 Suporte\\n💵 R$ 10\\n\\nQuer saber mais? Me chama! 😊"},
-    {tag: "Privado", text: "Oie! Tudo certo?\\n\\nVim te indicar o curso CONFEITARIA LUCRATIVA que tá mudando a vida de muita gente!\\n\\n+50 receitas que vendem\\n30 recheios de bônus\\nCertificado incluso\\nSuporte direto\\n\\nSó R$ 10 pra começar!\\n\\nSe tiver interesse, me chama que te explico melhor! 🥰"},
+    // ===== TEXTOS CURTOS (76-85) =====
+    {cat:"curto", txt:"🍰 Curso Confeitaria Lucrativa. +50 receitas. A partir de R$ 10. Chama no privado!"},
+    {cat:"curto", txt:"🥮 Aprenda confeitaria do zero. +50 receitas + 30 recheios de bônus. A partir de R$ 10. Fala comigo!"},
+    {cat:"curto", txt:"👩‍🍳 Faça bolos que vendem! Curso completo com certificado. A partir de R$ 10. Chama!"},
+    {cat:"curto", txt:"💰 Renda extra na confeitaria. +50 receitas exclusivas. A partir de R$ 10. Direct!"},
+    {cat:"curto", txt:"🎂 Empreenda na confeitaria! Curso +50 receitas + certificado. A partir de R$ 10. Me chama!"},
+    {cat:"curto", txt:"🍪 Quer lucrar com bolos e doces? Curso Confeitaria Lucrativa. A partir de R$ 10. Chama no privado!"},
+    {cat:"curto", txt:"🥐 Confeitaria do zero ao lucro. +50 receitas. Certificado incluso. A partir de R$ 10. Fala comigo!"},
+    {cat:"curto", txt:"👩‍🍳 Curso de confeitaria que realmente funciona. +50 receitas. A partir de R$ 10. Chama!"},
+    {cat:"curto", txt:"💰 Transforme sua paixão em lucro. Curso Confeitaria Lucrativa. A partir de R$ 10. Direct!"},
+    {cat:"curto", txt:"🍰 Aprenda e lucre com confeitaria! +50 receitas. A partir de R$ 10. Chama!"},
 
-    // ===== STORIES =====
-    {tag: "Stories", text: "🍰 QUER APRENDER CONFEITARIA?\\n\\nCurso completo com +50 receitas\\nSó R$ 10\\n\\n👆 Link na bio / Me chama no direct"},
-    {tag: "Stories", text: "🔥 CURSO CONFEITARIA LUCRATIVA\\n\\n+50 receitas\\n30 recheios bônus\\nCertificado\\nR$ 10\\n\\n📲 Me chama no direct!"},
-    {tag: "Stories", text: "💰 RENDA EXTRA FAZENDO DOCES!\\n\\nCurso completo R$ 10\\n+50 receitas\\n\\n📲 Chama no direct!"},
-    {tag: "Stories", text: "🧁 APRENDA CONFEITARIA DO ZERO\\n\\n+50 receitas\\n30 recheios\\nCertificado\\nSó R$ 10\\n\\n👆 Me chama!"},
-    {tag: "Stories", text: "🍪 FAÇO BOLOS QUE VENDEM!\\n\\nQuer aprender também?\\nCurso +50 receitas R$ 10\\n\\n📲 Chama no direct!"},
-    {tag: "Stories", text: "🎂 VOCÊ NA COZINHA LUCRANDO!\\n\\nCurso Confeitaria Lucrativa\\n+50 receitas • R$ 10\\n\\n📲 Me chama!"},
-    {tag: "Stories", text: "🔥 VAGAS ABERTAS!\\n\\nConfeitaria Lucrativa\\n+50 receitas • 30 recheios\\nSó R$ 10\\n\\n👉 Chama no direct!"},
-    {tag: "Stories", text: "🍩 QUER LUCRAR NA CONFEITARIA?\\n\\nCurso +50 receitas R$ 10\\n\\n📲 Me chama!"},
-    {tag: "Stories", text: "💵 DO ZERO AO LUCRO!\\n\\nCurso Confeitaria Lucrativa\\nSó R$ 10\\n\\n📲 Chama no direct!"},
-    {tag: "Stories", text: "🧁 +50 RECEITAS POR R$ 10!\\n\\nBônus: 30 recheios\\n\\n📲 Me chama!"},
-
-    // ===== VARIADOS =====
-    {tag: "Variado", text: "🍰 VOCÊ SABIA QUE DÁ PRA GANHAR DINHEIRO FAZENDO BOLOS EM CASA?\\n\\nCom o curso Confeitaria Lucrativa, você aprende:\\n- Receitas deliciosas\\n- Precificação correta\\n- Dicas de vendas\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💰 R$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "🌟 DEPOIMENTO REAL: 'Nunca imaginei que conseguiria fazer bolos tão lindos! O curso mudou minha vida!' - Aluna Confeitaria Lucrativa\\n\\nQuer ser a próxima?\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💰 R$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "👩‍🍳 JÁ PENSOU EM TER SEU PRÓPRIO NEGÓCIO DE CONFEITARIA?\\n\\nO Confeitaria Lucrativa te prepara pra isso!\\n\\n✅ +50 receitas\\n✅ 30 recheios\\n✅ Certificado\\n✅ Suporte\\n\\n💰 Invista R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "💕 PRESENTE PERFEITO!\\n\\nSabe alguém que ama confeitaria?\\n\\nO curso Confeitaria Lucrativa é o presente ideal!\\n\\n+50 receitas\\n30 recheios\\nCertificado\\nR$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "🔥 OPORTUNIDADE QUE NÃO PODE PASSAR!\\n\\nConfeitaria Lucrativa\\n\\nO curso mais completo por apenas R$ 10\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n\\n📲 Chama no WhatsApp agora!"},
-    {tag: "Variado", text: "🧁 CONFEITARIA LUCRATIVA - O CURSO\\n\\nSe você quer:\\n✔️ Aprender do zero\\n✔️ Fazer bolos profissionais\\n✔️ Vender e lucrar\\n\\nEsse curso é pra você!\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💰 R$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "📚 CONTEÚDO COMPLETO!\\n\\nBolos, tortas, doces, salgados, sobremesas...\\nTudo no Confeitaria Lucrativa!\\n\\n+50 receitas passo a passo\\n+30 recheios de bônus\\nCertificado incluso\\n\\n💰 R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "🍪 SABOR E LUCRO!\\n\\nAprenda confeitaria e transforme em dinheiro!\\n\\nCurso Confeitaria Lucrativa\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💵 R$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "🎂 BOLOS QUE ENCANTAM!\\n\\nAprenda o segredo dos bolos perfeitos com o Confeitaria Lucrativa!\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💰 R$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "👩‍🍳 VEM SER CONFEITEIRA!\\n\\nCurso Confeitaria Lucrativa\\nDo zero ao profissional\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💬 Suporte\\n\\n💰 Apenas R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "🔥 ÚLTIMAS VAGAS!\\n\\nCurso Confeitaria Lucrativa\\n\\nNão perca a chance de aprender e lucrar!\\n\\n+50 receitas\\n30 recheios\\nCertificado\\nR$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "💎 INVESTIMENTO QUE VALE A PENA!\\n\\nPor apenas R$ 10 você leva:\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💬 Suporte\\n\\nConfeitaria Lucrativa\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "🧁 PRA QUEM AMA COZINHAR!\\n\\nCurso de Confeitaria Lucrativa\\n\\nTransforme sua paixão em lucro!\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💰 R$ 10\\n\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "🍰 SEU SONHO PODE VIRAR REALIDADE!\\n\\nCom o curso Confeitaria Lucrativa você aprende e ganha dinheiro!\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n💬 Suporte\\n\\n💰 Só R$ 10\\n📲 Chama no WhatsApp!"},
-    {tag: "Variado", text: "🎉 PROMOÇÃO ESPECIAL!\\n\\nCurso Confeitaria Lucrativa\\nDe R$ 97 por apenas R$ 10!\\n\\n📚 +50 receitas\\n🎁 30 recheios\\n📜 Certificado\\n\\n🔥 Oferta por tempo limitado!\\n📲 Chama no WhatsApp!"},
+    // ===== ABORDAGEM PROFISSIONAL (86-100) =====
+    {cat:"profissional", txt:"📚 Curso Completo de Confeitaria — 50 receitas exclusivas, módulo de precificação, 30 recheios de bônus e certificado. Ideal para quem deseja empreender na área. Investimento a partir de R$ 10. Solicite informações."},
+    {cat:"profissional", txt:"👩‍🍳 Formação em Confeitaria: do zero ao negócio próprio. Metodologia passo a passo com +50 receitas testadas, bônus de 30 recheios e certificado de conclusão. Invista a partir de R$ 10. Fale conosco."},
+    {cat:"profissional", txt:"📖 Confeitaria Lucrativa — o guia completo para quem quer transformar receitas em lucro. São +50 receitas, 30 recheios exclusivos, estratégias de venda e certificado. A partir de R$ 10. Chama no WhatsApp."},
+    {cat:"profissional", txt:"🎯 Se você quer aprender confeitaria e construir um negócio sólido, o Confeitaria Lucrativa é o curso certo. +50 receitas, 30 recheios de bônus, suporte e certificado. A partir de R$ 10. Fale conosco."},
+    {cat:"profissional", txt:"🥇 Confeitaria profissional do zero! Curso completo com +50 receitas que vendem, 30 recheios de bônus, certificado e suporte direto. Resultados comprovados. A partir de R$ 10. Chama no WhatsApp."},
+    {cat:"profissional", txt:"📚 Invista no seu futuro com o curso Confeitaria Lucrativa. +50 receitas exclusivas, 30 recheios de bônus, certificado e estratégias de venda. A partir de R$ 10. Solicite mais informações."},
+    {cat:"profissional", txt:"👩‍🍳 Transforme sua habilidade em renda. Curso Confeitaria Lucrativa com +50 receitas, 30 recheios de bônus e certificado. Para iniciantes e profissionais. A partir de R$ 10. Fale conosco."},
+    {cat:"profissional", txt:"📖 Confeitaria Lucrativa: o curso que ensina o passo a passo para fazer bolos, doces e salgados que vendem. +50 receitas, certificado, 30 recheios de bônus. A partir de R$ 10. Chama!"},
+    {cat:"profissional", txt:"🎯 Curso completo de confeitaria com foco em resultados. +50 receitas testadas, módulo de precificação, 30 recheios de bônus e certificado. A partir de R$ 10. Informações no WhatsApp."},
+    {cat:"profissional", txt:"🥇 A melhor escolha para quem quer aprender confeitaria de verdade. Conteúdo completo, +50 receitas, 30 recheios de bônus, certificado incluso. A partir de R$ 10. Fale conosco."},
+    {cat:"profissional", txt:"📚 Aprenda confeitaria do zero com o curso Confeitaria Lucrativa. +50 receitas exclusivas, 30 recheios de bônus, certificado e suporte direto. A partir de R$ 10. Solicite!"},
+    {cat:"profissional", txt:"👩‍🍳 Curso de confeitaria completo e acessível. +50 receitas que vendem, 30 recheios de bônus, certificado de conclusão. Ideal para quem quer empreender. A partir de R$ 10. Chama!"},
+    {cat:"profissional", txt:"📖 Confeitaria Lucrativa: transforme seu talento em lucro. Curso com +50 receitas, 30 recheios de bônus, certificado e estratégias de venda. A partir de R$ 10. Fale conosco!"},
+    {cat:"profissional", txt:"🎯 Para quem quer sair do zero e construir um negócio de confeitaria de sucesso. Curso completo +50 receitas, 30 recheios de bônus, certificado. A partir de R$ 10. Chama no WhatsApp!"},
+    {cat:"profissional", txt:"🥇 Confeitaria Lucrativa: o curso definitivo para quem ama confeitaria e quer lucrar com isso. +50 receitas, 30 recheios de bônus, certificado incluso. A partir de R$ 10. Informações!"},
 ];
 
-// Renderizar textos
-const grid = document.getElementById('textosGrid');
-const count = document.getElementById('textCount');
-const searchBox = document.getElementById('searchBox');
-
-function renderTextos(filtro = '') {
-    grid.innerHTML = '';
-    const f = filtro.toLowerCase();
-    const filtrados = textos.filter(t => 
-        t.tag.toLowerCase().includes(f) || 
-        t.text.toLowerCase().includes(f)
-    );
-    
-    count.textContent = `📄 ${filtrados.length} de ${textos.length} textos`;
-    
-    filtrados.forEach((t, i) => {
-        const card = document.createElement('div');
-        card.className = 'texto-card';
-        card.innerHTML = \`
-            <span class="tag">\${t.tag}</span>
-            <button class="copy-btn" onclick="copiar(this)">📋 Copiar</button>
-            <p>\${t.text.replace(/\\n/g, '<br>')}</p>
-        \`;
-        grid.appendChild(card);
-    });
-}
-
-function copiar(btn) {
-    const card = btn.closest('.texto-card');
+// Função para copiar texto
+function copiarTexto(elemento) {
+    const card = elemento.closest('.texto-card');
     const texto = card.querySelector('p').innerText;
     navigator.clipboard.writeText(texto).then(() => {
         const toast = document.getElementById('toast');
@@ -317,8 +359,61 @@ function copiar(btn) {
     });
 }
 
-searchBox.addEventListener('input', (e) => renderTextos(e.target.value));
-renderTextos();
+// Paginação
+let paginaAtual = 1;
+const porPagina = 10;
+let textosFiltrados = textos;
+
+function filtrarTextos() {
+    const filtro = document.getElementById('filtroCategoria').value;
+    if (filtro === 'todos') {
+        textosFiltrados = textos;
+    } else {
+        textosFiltrados = textos.filter(t => t.cat === filtro);
+    }
+    paginaAtual = 1;
+    renderizarTextos();
+}
+
+function renderizarTextos() {
+    const container = document.getElementById('textosContainer');
+    const inicio = (paginaAtual - 1) * porPagina;
+    const fim = inicio + porPagina;
+    const paginaTextos = textosFiltrados.slice(inicio, fim);
+    
+    container.innerHTML = '';
+    paginaTextos.forEach((t, i) => {
+        const idx = textos.indexOf(t) + 1;
+        const div = document.createElement('div');
+        div.className = 'texto-card';
+        div.innerHTML = `<span class="numero">#${idx}</span><p>${t.txt}</p><button class="copy-btn" onclick="copiarTexto(this)">📋 Copiar</button>`;
+        container.appendChild(div);
+    });
+    
+    renderizarPaginacao();
+}
+
+function renderizarPaginacao() {
+    const totalPaginas = Math.ceil(textosFiltrados.length / porPagina);
+    const render = (containerId) => {
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
+        for (let i = 1; i <= totalPaginas; i++) {
+            const btn = document.createElement('button');
+            btn.textContent = i;
+            btn.className = i === paginaAtual ? 'active' : '';
+            btn.onclick = () => { paginaAtual = i; renderizarTextos(); window.scrollTo({top: 0, behavior: 'smooth'}); };
+            container.appendChild(btn);
+        }
+    };
+    render('paginationTop');
+    render('paginationBottom');
+}
+
+// Inicializar
+document.addEventListener('DOMContentLoaded', () => {
+    renderizarTextos();
+});
 </script>
 </body>
 </html>
