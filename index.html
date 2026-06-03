@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Central do Afiliado — Confeitaria Lucrativa</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #1a0030 0%, #2d004d 50%, #1a0030 100%);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,215,0,0.3);
+}
+
+.header h1 {
+    font-size: 42px;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.header h2 {
+    font-size: 28px;
+    color: #ffb300;
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 18px;
+    color: #ddd;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.pix-info {
+    display: inline-block;
+    background: rgba(0,150,0,0.2);
+    border: 2px solid #00c800;
+    border-radius: 12px;
+    padding: 15px 30px;
+    margin-top: 10px;
+}
+
+.pix-info h3 {
+    font-size: 22px;
+    color: #00ff00;
+}
+
+.pix-info p {
+    font-size: 16px;
+    color: #aaa;
+}
+
+.section-title {
+    font-size: 26px;
+    color: #ffd700;
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255,215,0,0.3);
+}
+
+.comissoes {
+    background: rgba(255,215,0,0.1);
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.comissoes h3 {
+    font-size: 20px;
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.tabela th {
+    background: rgba(255,215,0,0.3);
+    color: #ffd700;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabela td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tabela tr:hover { background: rgba(255,255,255,0.05); }
+
+.destaque { color: #00ff00; font-weight: bold; }
+
+.artes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    margin: 20px 0;
+}
+
+.arte-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s;
+}
+
+.arte-card:hover { transform: translateY(-5px); }
+
+.arte-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.arte-card .info {
+    padding: 15px;
+}
+
+.arte-card .info p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary { background: #8b0000; color: #fff; }
+.btn-primary:hover { background: #a00000; }
+.btn-secondary { background: rgba(255,255,255,0.15); color: #fff; }
+.btn-secondary:hover { background: rgba(255,255,255,0.25); }
+
+.textos-prontos {
+    display: grid;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.texto-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+}
+
+.texto-card .copy-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255,215,0,0.2);
+    color: #ffd700;
+    border: 1px solid #ffd700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.texto-card .copy-btn:hover { background: rgba(255,215,0,0.3); }
+
+.texto-card p { font-size: 14px; color: #ddd; line-height: 1.6; }
+
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255,255,255,0.4);
+    font-size: 14px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00c800;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
+    z-index: 999;
+}
+
+@media (max-width: 600px) {
+    .header h1 { font-size: 28px; }
+    .header h2 { font-size: 22px; }
+    .artes-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>🍰 CONFEITARIA LUCRATIVA</h1>
+        <h2>Central do Afiliado — Hortmart 🛒</h2>
+        <p>Seja bem-vindo(a) à central de materiais! Aqui você encontra tudo que precisa para divulgar e vender o curso.</p>
+        <div class="pix-info">
+            <h3>💰 Sua comissão: de R$ 5 a R$ 10 por venda!</h3>
+            <p>Quanto mais vende, mais você ganha. PIX na hora!</p>
+        </div>
+    </div>
+
+    <!-- TABELA DE COMISSOES -->
+    <div class="comissoes">
+        <h3>📊 Tabela de Comissões</h3>
+        <table class="tabela">
+            <tr><th>Vendas no mês</th><th>Comissão por venda</th><th>Ganho potencial</th></tr>
+            <tr><td>1 a 9 vendas</td><td>R$ 5,00</td><td>até R$ 45</td></tr>
+            <tr><td>10 a 19 vendas</td><td class="destaque">R$ 7,00</td><td>até R$ 133</td></tr>
+            <tr><td>20 a 29 vendas</td><td class="destaque">R$ 8,00</td><td>até R$ 232</td></tr>
+            <tr><td>30+ vendas</td><td class="destaque">R$ 10,00</td><td>R$ 300+</td></tr>
+        </table>
+        <p style="margin-top:10px; font-size:14px; color:#aaa;">✅ PIX na hora! ✅ Sem meta mínima ✅ Resultado = recompensa</p>
+    </div>
+
+    <!-- ARTES -->
+    <h2 class="section-title">🎨 Artes para Divulgação</h2>
+    <p style="color:#aaa; margin-bottom:20px;">Clique com o botão direito e "Salvar imagem como..." para baixar. Use nos grupos, stories e posts.</p>
+
+    <div class="artes-grid">
+        <div class="arte-card">
+            <img src="kit_afiliados_hortmart/Arte1_Confeitaria_Lucrativa.png" alt="Arte 1">
+            <div class="info">
+                <p>Arte 1 — Confeitaria Lucrativa (roxo)</p>
+                <div class="btn-group">
+                    <a href="kit_afiliados_hortmart/Arte1_Confeitaria_Lucrativa.png" download class="btn btn-primary">📥 Baixar PNG</a>
+                </div>
+            </div>
+        </div>
+        <div class="arte-card">
+            <img src="kit_afiliados_hortmart/Arte2_Curso_Completo.png" alt="Arte 2">
+            <div class="info">
+                <p>Arte 2 — Curso Completo (vinho)</p>
+                <div class="btn-group">
+                    <a href="kit_afiliados_hortmart/Arte2_Curso_Completo.png" download class="btn btn-primary">📥 Baixar PNG</a>
+                </div>
+            </div>
+        </div>
+        <div class="arte-card">
+            <img src="kit_afiliados_hortmart/Arte3_50_Receitas.png" alt="Arte 3">
+            <div class="info">
+                <p>Arte 3 — +50 Receitas (azul escuro)</p>
+                <div class="btn-group">
+                    <a href="kit_afiliados_hortmart/Arte3_50_Receitas.png" download class="btn btn-primary">📥 Baixar PNG</a>
+                </div>
+            </div>
+        </div>
+        <div class="arte-card">
+            <img src="kit_afiliados_hortmart/Arte4_Aprenda_em_Casa.png" alt="Arte 4">
+            <div class="info">
+                <p>Arte 4 — Aprenda em Casa (vinho escuro)</p>
+                <div class="btn-group">
+                    <a href="kit_afiliados_hortmart/Arte4_Aprenda_em_Casa.png" download class="btn btn-primary">📥 Baixar PNG</a>
+                </div>
+            </div>
+        </div>
+        <div class="arte-card">
+            <img src="kit_afiliados_hortmart/Arte5_Lucro_Garantido.png" alt="Arte 5">
+            <div class="info">
+                <p>Arte 5 — Lucro Garantido (azul petróleo)</p>
+                <div class="btn-group">
+                    <a href="kit_afiliados_hortmart/Arte5_Lucro_Garantido.png" download class="btn btn-primary">📥 Baixar PNG</a>
+                </div>
+            </div>
+        </div>
+        <div class="arte-card">
+            <img src="kit_afiliados_hortmart/Arte6_Seu_Negocio.png" alt="Arte 6">
+            <div class="info">
+                <p>Arte 6 — Monte Seu Negócio (roxo escuro)</p>
+                <div class="btn-group">
+                    <a href="kit_afiliados_hortmart/Arte6_Seu_Negocio.png" download class="btn btn-primary">📥 Baixar PNG</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TEXTOS PRONTOS -->
+    <h2 class="section-title">📝 Textos Prontos</h2>
+    <p style="color:#aaa; margin-bottom:20px;">Copie e cole nos grupos, stories ou mensagens.</p>
+
+    <div class="textos-prontos">
+        <div class="texto-card">
+            <button class="copy-btn" onclick="copiarTexto(this)">📋 Copiar</button>
+            <p><strong>Para grupos de WhatsApp:</strong><br><br>
+                🍰 CURSO DE CONFEITARIA — DO ZERO AO LUCRO!<br><br>
+                Aprenda fazer bolos, doces e salgados que vendem de verdade!<br><br>
+                📚 O curso tem:<br>
+                ✅ +50 Receitas exclusivas<br>
+                ✅ 30 Recheios de bônus<br>
+                ✅ Certificado incluso<br>
+                ✅ Suporte direto<br>
+                ✅ Precificação correta pra lucrar<br><br>
+                💰 Invista a partir de R$ 10 e comece a ganhar dinheiro hoje!<br><br>
+                📲 Chama no privado e garanta sua vaga!</p>
+        </div>
+
+        <div class="texto-card">
+            <button class="copy-btn" onclick="copiarTexto(this)">📋 Copiar</button>
+            <p><strong>Para Stories do Instagram:</strong><br><br>
+                🍰 Quer aprender confeitaria e ainda lucrar com isso?<br><br>
+                O curso CONFEITARIA LUCRATIVA tem:<br>
+                ✨ +50 receitas que vendem<br>
+                ✨ 30 recheios de bônus<br>
+                ✨ Certificado incluso<br><br>
+                A partir de R$ 10 você começa!<br><br>
+                👇 Link na bio / Chama no direct</p>
+        </div>
+
+        <div class="texto-card">
+            <button class="copy-btn" onclick="copiarTexto(this)">📋 Copiar</button>
+            <p><strong>Para posts no Facebook:</strong><br><br>
+                🍰 VOCÊ AMA CONFEITARIA?<br><br>
+                Transforme sua paixão em dinheiro com o curso CONFEITARIA LUCRATIVA!<br><br>
+                São +50 receitas testadas e aprovadas, com direito a 30 recheios de bônus e certificado de conclusão.<br><br>
+                Ideal para quem quer:<br>
+                ✔️ Aprender do zero<br>
+                ✔️ Montar um negócio em casa<br>
+                ✔️ Vender no iFood e WhatsApp<br>
+                ✔️ Lucrar todos os dias<br><br>
+                💰 Investimento a partir de R$ 10<br>
+                📲 Me chama no WhatsApp pra mais informações!</p>
+        </div>
+    </div>
+
+    <!-- INSTRUCOES -->
+    <h2 class="section-title">📌 Como divulgar</h2>
+
+    <div style="background:rgba(255,255,255,0.05); border-radius:15px; padding:25px; margin:20px 0;">
+        <ol style="margin-left:20px; color:#ddd; font-size:16px; line-height:2;">
+            <li><strong>Escolha uma arte</strong> acima e baixe no seu celular</li>
+            <li><strong>Cole nos grupos</strong> de WhatsApp, Facebook ou Instagram</li>
+            <li><strong>Copie o texto</strong> pronto e envie junto com a imagem</li>
+            <li><strong>Quando alguém demonstrar interesse</strong>, passe o contato pra Carol</li>
+            <li><strong>Venda confirmada = PIX na hora!</strong> 🎉</li>
+        </ol>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2025 Carol Ribeiro — Delícias na Hora</p>
+        <p>Em parceria com Hortmart 🛒</p>
+        <p style="margin-top:10px;">Tem dúvidas? Chama a Carol no WhatsApp!</p>
+    </div>
+</div>
+
+<div class="toast" id="toast">✅ Texto copiado!</div>
+
+<script>
+function copiarTexto(btn) {
+    const card = btn.parentElement;
+    const texto = card.querySelector('p').innerText;
+    navigator.clipboard.writeText(texto).then(() => {
+        const toast = document.getElementById('toast');
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2000);
+    });
+}
+
+// Verificar se as imagens existem
+window.addEventListener('load', function() {
+    document.querySelectorAll('img').forEach(img => {
+        img.onerror = function() {
+            this.style.display = 'none';
+            const parent = this.closest('.arte-card');
+            if (parent) {
+                const info = parent.querySelector('.info');
+                if (info) {
+                    info.innerHTML = '<p style="color:#ff6666;">⚠️ Arte na pasta do computador. Abra o arquivo HTML pela pasta "curso de confeitaria".</p>';
+                }
+            }
+        };
+    });
+});
+</script>
+</body>
+</html>
